@@ -1,14 +1,29 @@
 cmake_minimum_required (VERSION 3.8)
+project("SearchEngine")
 
-set(Src
-	"ConverterJSON.cpp"
-	"SearchEngine.cpp"
-	"InvertedIndex.cpp"
-	"main.cpp"
+set(CMAKE_CXX_STANDARD 20)
+
+set(MY_INCLUDE_DIR
+  ${CMAKE_SOURCE_DIR}/include
 )
+set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
-add_executable(SearchEngine ${Src})
+include(FetchContent)
 
-target_link_libraries(SearchEngine nlohmann_json::nlohmann_json)
-target_include_directories(SearchEngine PUBLIC ${MY_INCLUDE_DIR})
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG release-1.12.1
+)
+FetchContent_MakeAvailable(googletest)
+
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+enable_testing()
+
+add_subdirectory(src)
+add_subdirectory(tests)

@@ -1,7 +1,1 @@
-Иногда кажется, что расстояние всегда играет против.
-Особенно, когда на него накладывается время.
-Есть что-то абсолютно правильное в предоставлении другому свободы. Без истерик. Без пыток типа "а где ты был? а кто там был ещё? а что?.. а зачем?.."
-
-Но что-то безжалостно размазывает этот замок по плоскости расстояния и времени. Как замок из песка, накрытый волной - думали, делали, старались, но - грохот разбившей его волны откатывает, чтобы открыть идеально ровный песчаный пляж: давайте, стройте заново...
-
-Не могу понять - это иллюзия или действительно неправильно - слишком много времени, проведённого не вместе.
+Genetics, otherwise known as the Science of Heredity, is the study of biological information, and how this information is stored, replicated, transmitted and used by subsequent generations. The study of genetics can be sub-divided into three main areas: Transmission Genetics, Molecular Genetics, and Population Genetics. In this Introductory text, the focus is on Transmission or Classical Genetics, which deals with the basic principles of heredity and the mechanisms by which traits are passed from one generation to the next. The work of Gregor Mendel is central to Transmission Genetics; as such, there is a discussion about the pioneering work performed by him along with Mendel’s Laws, as they pertain to inheritance. Other aspects of Classical Genetics are covered, including the relationship between chromosomes and heredity, the arrangement of genes on chromosomes, and the physical mapping of genes.

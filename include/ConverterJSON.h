@@ -113,6 +113,7 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
         if(use){
             std::vector<std::pair<int, float>> vec =answers[i];
             for(int k=0;k<vec.size();k++){
+
                 j["answers"][str]["relevance"]["doc_id"+std::to_string(k)]=vec[k].first;
                 j["answers"][str]["relevance"]["rank"+std::to_string(k)]=vec[k].second;
             }

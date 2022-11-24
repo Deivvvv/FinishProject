@@ -36,22 +36,41 @@ requests.json
             std::vector<std::string> words = _index.split(queries_input[i], " ");
             for(int j =0; j< words.size();j++){
                 std::vector<Entry> entry =_index.GetWordCount(words[j]);
-                RelativeIndex index;
+
                 for(int l=0; l< _index.docsSize;l++)
                     for(int k=0;k<entry.size();k++){
-                        index = RelativeIndex();
-                        index.doc_id = l;
                         if(entry[k].doc_id == l){
+                            bool  uses = false;
+                            for(int h=0;h<resultCase.size();h++)
+                                if(resultCase[h].doc_id == l)
+                                {
+                                    resultCase[h].rank+= entry[k].count;
+                                    uses = true;
+                                    break;
+                                }
+                            if(uses)
+                                break;
+
+                            RelativeIndex  index = RelativeIndex();
+                            index.doc_id = l;
                             index.rank = entry[k].count;
                             resultCase.push_back(index);
+                           // std::cout << index.doc_id<< std::endl;
+                            //std::cout << resultCase[resultCase.size()-1].doc_id << std::endl;
                             break;
                         }
                     }
             }
             float resultMax=0;
             for(int j=0;j<resultCase.size();j++)
-                if(resultCase[j].rank> resultMax)
-                    resultMax = resultCase[j].rank;
+                for(int k=j;k<resultCase.size();k++)
+                    if(resultCase[j].rank < resultCase[k].rank){
+                        RelativeIndex a =resultCase[k];
+                        resultCase[k]=resultCase[j];
+                        resultCase[j] = a;
+                    }
+            if(resultCase.size()>0)
+                resultMax = resultCase[0].rank;
 
             if(resultMax ==0)
                 resultCase = std::vector<RelativeIndex>();

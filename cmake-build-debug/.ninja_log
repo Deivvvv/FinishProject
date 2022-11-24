@@ -1,0 +1,25 @@
+# ninja log v5
+4	2540	6909169594250961	src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj	a81c4e590ddf179c
+3	2620	6909180368874696	src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj	d2437112d16b453d
+11	2023	6903033212265885	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	56b84dd2b7590568
+0	10	0	clean	c0c0cc440c21b260
+6	2588	6909208200391259	src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj	d0ee251fab46dbbe
+10	3829	6909163152473687	tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj	7b1183bb5ba8eec7
+3	4065	6909208215094551	src/CMakeFiles/SearchEngine.dir/main.cpp.obj	b519dba576777a85
+4066	5281	6909208227280220	../SearchEngine.exe	ac6c9474aff9a3a2
+2	3171	6909824378336443	build.ninja	1e15e958855d29f7
+7	2549	6903033217537079	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	14858166b22acb44
+4	4348	6903033235491134	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	6367ad2ac26633e5
+2024	6324	6903033255285613	tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj	6eaf136b6d6dbdd6
+12	3552	6909163149713067	tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj	3d7fa8a684274ccf
+3705	7221	6903033264257644	tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.obj	e49aca43a33ad015
+5	3036	6909165657568431	tests/CMakeFiles/GtestTests.dir/SearchEngine_test.cpp.obj	6546157524a72401
+8	3939	6909163153581384	tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj	505d2b5b02a14f4b
+9	8818	6903033280091221	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	1d3280623d69a86b
+8820	10735	6903033299425595	lib/libgtest.a	601c2d192c1c0d7d
+10737	10785	6903033299935703	lib/libgtest_main.a	931d296c368a6347
+3036	8808	6909165715309047	tests/GtestTests[1]_tests.cmake	283602c322a6b0d4
+10735	11042	6903033302496282	lib/libgmock.a	1815c55176c65509
+11042	11093	6903033303006408	lib/libgmock_main.a	5b5de24fcc31b832
+3036	8808	6909165715309047	../tests/GtestTests.exe	283602c322a6b0d4
+3036	8808	6909165715309047	C:/Users/Admin/Downloads/SearchEngine/cmake-build-debug/tests/GtestTests[1]_tests.cmake	283602c322a6b0d4
