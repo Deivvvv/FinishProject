@@ -1,4 +1,5 @@
 #include "SearchServer.h"
+#include "SearchServer.cpp"
 #include <iostream>
 
 std::string FindPath(std::string word){
@@ -39,7 +40,8 @@ int main(int argc, char *argv[])
         }
     }*/
 
-    ConverterJSON conv = ConverterJSON(mainPath);
+    ConverterJSON conv = ConverterJSON();
+    conv.SetPath(mainPath);
     index.UpdateDocumentBase(conv.GetTextDocuments());
 
     SearchServer search(index);
