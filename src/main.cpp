@@ -24,22 +24,6 @@ int main(int argc, char *argv[])
     InvertedIndex index;
     index.SetPath(mainPath);
 
-    //std::string str;
-    //std::cin >> str;
-   // if(str != "Start")
-   //     return 0;
-        /*
-    while(true){
-        std::cout <<"Введите комманду"<<std::endl;
-        std::cin >> str;
-        if(str == "Help"){
-            std::cout <<"Комманды для использования"<<std::endl;
-
-        }else if(str == "MainPath"){
-
-        }
-    }*/
-
     ConverterJSON conv = ConverterJSON();
     conv.SetPath(mainPath);
     index.UpdateDocumentBase(conv.GetTextDocuments());
@@ -53,7 +37,6 @@ int main(int argc, char *argv[])
         for(int i1=0;i1< result[i].size();i1++){
 
             std::pair<int, float> resultCaseData =  std::pair<int, float>();
-            //std::cout <<result[i][i1].doc_id <<std::endl;
             resultCaseData.first = result[i][i1].doc_id;
             resultCaseData.second = result[i][i1].rank;
             resultCase[i1] = resultCaseData;

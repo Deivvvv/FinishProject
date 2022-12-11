@@ -3,12 +3,10 @@
 
 
 std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<std::string>& queries_input){
-    std::vector<std::vector<RelativeIndex>> result = std::vector<std::vector<RelativeIndex>>(queries_input.size());
 
+    auto addWords = [](std::vector<std::string> words , InvertedIndex _index){
 
-    for(int i=0;i< queries_input.size();i++){
         std::vector<RelativeIndex> resultCase =std::vector<RelativeIndex>();
-        std::vector<std::string> words = _index.split(queries_input[i], " ");
         for(int j =0; j< words.size();j++){
             std::vector<Entry> entry =_index.GetWordCount(words[j]);
 
@@ -34,6 +32,11 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
                     }
                 }
         }
+
+            return  resultCase;
+    };
+
+    auto  countWords = []( std::vector<RelativeIndex> resultCase , InvertedIndex _index){
         float resultMax=0;
         for(int j=0;j<resultCase.size();j++)
             for(int k=j;k<resultCase.size();k++)
@@ -57,8 +60,16 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
                 resultCase[k].rank /=resultMax;
             }
         }
-        result[i] = resultCase;
+        return  resultCase;
+    };
 
+
+    std::vector<std::vector<RelativeIndex>> result = std::vector<std::vector<RelativeIndex>>(queries_input.size());
+
+
+    for(int i=0;i< queries_input.size();i++){
+        std::vector<RelativeIndex> resultCase = addWords(_index.split(queries_input[i], " "),_index);
+        result[i] = countWords(resultCase,_index);
     }
     return result;
 };

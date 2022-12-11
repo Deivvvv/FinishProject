@@ -1,0 +1,5 @@
+"F:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=F:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\Admin\Downloads\SecrachEngine -B C:\Users\Admin\Downloads\SecrachEngine\cmake-build-debug
+-- Using the multi-header code from C:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug/_deps/json-src/include/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug

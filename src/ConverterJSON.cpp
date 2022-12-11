@@ -5,30 +5,35 @@ std::string path;
 void ConverterJSON::SetPath(std::string _path){
 path= _path;
 }
+void  ScanFile(std::ifstream *file, std::string filePath){
+
+    if(!file->good()){
+        std::cout <<"File " + filePath+" no accses read" << std::endl;
+       std::exit(0);
+    }
+}
 
 json OpenJson(std::string str){
-    //std::cout << path+"\\"+str<< std::endl;
     std::ifstream file(path+"\\"+str);
+    ScanFile(&file,path+"\\"+str);
+
     json j = json::parse(file);
-    //std::cout << j << std::endl;
 
     file.close();
     return j;
 };
 
 std::string OpenFile(std::string str){
-    //std::vector<std::string> wordList;
     std::string wordFull =" ";
     std::string word;
     std::ifstream file(path+"\\"+str);
-    //std::cout << path+"\\"+str<< std::endl;
+    ScanFile(&file,path+"\\"+str);
     while(!file.eof()){
         file >> word;
         if(wordFull == " ")
             wordFull = word;
         else
             wordFull +=" "+ word;
-        //wordList.push_back(word);
     }
 
     file.close();
@@ -42,8 +47,6 @@ std::vector<std::string> ConverterJSON::GetTextDocuments(){
 
     for(int i=0;i<vec.size();i++){
         list.push_back(OpenFile(vec[i]));
-
-        //std::cout << list[i]<< std::endl;
     }
 
     return list;
@@ -101,7 +104,7 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> a
         }
     }
 
-    std::cout << j << std::endl;
+    std::cout << j.dump(4) << std::endl;
     file<<j;
     file.close();
 };

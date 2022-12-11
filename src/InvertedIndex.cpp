@@ -77,26 +77,25 @@ void InvertedIndex::UpdateDocumentBase(const std::vector<std::string> &input_doc
     }
 
 
+    std::vector<std::thread> threadList;
     for(int i = 0; i < new_docs.size(); i++)
     {
         int a = docs.size();
-        //UpdateDocumentBaseThread(docs.size(),new_docs[i]);
         std::thread call(&InvertedIndex::UpdateDocumentBaseThread, this,a ,new_docs[i]);
-
-        call.join();
+        threadList.push_back(std::move(call));
 
         docs.push_back(new_docs[i]);
     }
-    //std::thread call(UpdateDocumentBaseThread(docs.size(),new_docs[i]));
 
-    //std::cout << freq_dictionary.size() << std::endl;
+    for(int i =0;i<threadList.size();i++)
+        threadList[i].join();
+
     docsSize = docs.size();
 }
 
 std::vector<Entry> InvertedIndex::GetWordCount(const std::string &word) const
 {
     auto search = freq_dictionary.find(word);
-    //std::cout << search->second << std::endl;
     if(search != freq_dictionary.end()){
 for(int i=0;i< search->second.size();i++){
     std::cout<< word << ":"<< search->second[i].doc_id << ":"<< search->second[i].count << std::endl;
