@@ -1,8 +1,8 @@
 cmake_minimum_required (VERSION 3.8)
 
 set(Src
-	"ConverterJSON.cpp"
-        "InvertedIndex.cpp"
+		"ConverterJSON.cpp"
+		"InvertedIndex.cpp"
 	"main.cpp"
 )
 

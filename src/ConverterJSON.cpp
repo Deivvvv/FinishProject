@@ -12,6 +12,15 @@ void  ScanFile(std::ifstream *file, std::string filePath){
        std::exit(0);
     }
 }
+void  ScanSaveFile( std::string filePath){
+
+    std::ifstream file(filePath);
+    if(!file.is_open()){
+        std::cout <<"File " + filePath+" no save" << std::endl;
+        std::exit(0);
+    }
+    file.close();
+}
 
 json OpenJson(std::string str){
     std::ifstream file(path+"\\"+str);
@@ -107,4 +116,6 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> a
     std::cout << j.dump(4) << std::endl;
     file<<j;
     file.close();
+
+    ScanSaveFile(path+"\\answers.json");
 };
