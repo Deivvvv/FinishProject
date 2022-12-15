@@ -1,5 +1,4 @@
 #include "SearchServer.h"
-#include "SearchServer.cpp"
 #include <iostream>
 
 std::string FindPath(std::string word){

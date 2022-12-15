@@ -594,6 +594,13 @@ build src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj: CXX_COMPILER__Searc
   OBJECT_DIR = src\CMakeFiles\SearchEngine.dir
   OBJECT_FILE_DIR = src\CMakeFiles\SearchEngine.dir
 
+build src/CMakeFiles/SearchEngine.dir/SearchServer.cpp.obj: CXX_COMPILER__SearchEngine_Debug C$:/Users/Admin/Downloads/SecrachEngine/src/SearchServer.cpp || cmake_object_order_depends_target_SearchEngine
+  DEP_FILE = src\CMakeFiles\SearchEngine.dir\SearchServer.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -IC:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug/_deps/googletest-src/googletest/include -IC:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug/_deps/googletest-src/googletest -IC:/Users/Admin/Downloads/SecrachEngine/include -IC:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug/_deps/json-src/include
+  OBJECT_DIR = src\CMakeFiles\SearchEngine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\SearchEngine.dir
+
 build src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj: CXX_COMPILER__SearchEngine_Debug C$:/Users/Admin/Downloads/SecrachEngine/src/InvertedIndex.cpp || cmake_object_order_depends_target_SearchEngine
   DEP_FILE = src\CMakeFiles\SearchEngine.dir\InvertedIndex.cpp.obj.d
   FLAGS = -g -std=gnu++2a
@@ -616,7 +623,7 @@ build src/CMakeFiles/SearchEngine.dir/main.cpp.obj: CXX_COMPILER__SearchEngine_D
 #############################################
 # Link the executable ..\SearchEngine.exe
 
-build ../SearchEngine.exe: CXX_EXECUTABLE_LINKER__SearchEngine_Debug src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj src/CMakeFiles/SearchEngine.dir/main.cpp.obj
+build ../SearchEngine.exe: CXX_EXECUTABLE_LINKER__SearchEngine_Debug src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj src/CMakeFiles/SearchEngine.dir/SearchServer.cpp.obj src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj src/CMakeFiles/SearchEngine.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\SearchEngine.dir

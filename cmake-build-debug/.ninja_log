@@ -1,12 +1,12 @@
 # ninja log v5
-11	3175	6924374620845356	tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj	ec637b678f6154c1
 8	1794	6924487974846951	src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj	abb2d3f2abcf5308
+11	3175	6924374620845356	tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj	ec637b678f6154c1
 6	1762	6924487974526885	src/CMakeFiles/SearchEngine.dir/main.cpp.obj	7add788277814549
 9	2814	6924374617224545	tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj	18747e80b73d0ec8
 3	3341	6928165994783444	src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj	66033e3937e93f51
-4	1611	6928047081993720	../SearchEngine.exe	a9f0a2ca2cf3d227
-13	2748	6924374616564408	tests/CMakeFiles/GtestTests.dir/__/src/SearchServer.cpp.obj	575dc3c92e445f2
+3	1398	6928166102966699	../SearchEngine.exe	a9f0a2ca2cf3d227
 4	1959	6924374608678287	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	7659d58bd8a7c1d8
+13	2748	6924374616564408	tests/CMakeFiles/GtestTests.dir/__/src/SearchServer.cpp.obj	575dc3c92e445f2
 17	3360	6924374622705779	tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj	1e468d53f9ac9a71
 7	3607	6924374625156326	tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.obj	17a5fec3133301e9
 15	4570	6924374634738480	tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.obj	17dc187a0310caee
@@ -16,7 +16,8 @@
 13928	19909	6924374788182711	../tests/GtestTests.exe	ece80231e489ee96
 13928	19909	6924374788182711	tests/GtestTests[1]_tests.cmake	ece80231e489ee96
 13928	19909	6924374788182711	C:/Users/Admin/Downloads/SecrachEngine/cmake-build-debug/tests/GtestTests[1]_tests.cmake	ece80231e489ee96
-1	2318	6928166088324873	build.ninja	8871faf566506071
+1	922	6928169508320904	build.ninja	8871faf566506071
 3	2982	6928046689923716	src/CMakeFiles/SearchEngine.dir/SearchServer.cpp.obj	6e950cd91d2e64d8
-1	922	6928166088324873	build.ninja	8871faf566506071
-3	1398	6928166102966699	../SearchEngine.exe	a9f0a2ca2cf3d227
+1	977	6928169508320904	build.ninja	8871faf566506071
+4	1598	6928169525034656	src/CMakeFiles/SearchEngine.dir/main.cpp.obj	7add788277814549
+1598	3042	6928169539447891	../SearchEngine.exe	a7576a9b838bb748
