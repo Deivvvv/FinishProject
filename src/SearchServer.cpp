@@ -4,13 +4,13 @@
 
 std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<std::string>& queries_input){
 
-    auto addWords = [](std::vector<std::string> words , InvertedIndex _index){
+    auto addWords = [](std::vector<std::string> words , InvertedIndex *_index){
 
         std::vector<RelativeIndex> resultCase =std::vector<RelativeIndex>();
         for(int j =0; j< words.size();j++){
-            std::vector<Entry> entry =_index.GetWordCount(words[j]);
+            std::vector<Entry> entry =_index->GetWordCount(words[j]);
 
-            for(int l=0; l< _index.docsSize;l++)
+            for(int l=0; l< _index->docsSize;l++)
                 for(int k=0;k<entry.size();k++){
                     if(entry[k].doc_id == l){
                         bool  uses = false;
@@ -36,7 +36,8 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             return  resultCase;
     };
 
-    auto  countWords = []( std::vector<RelativeIndex> resultCase , InvertedIndex _index){
+    auto  countWords = []( std::vector<RelativeIndex> *resultCaseOrig , InvertedIndex *_index){
+        std::vector<RelativeIndex> resultCase = *resultCaseOrig;
         float resultMax=0;
         for(int j=0;j<resultCase.size();j++)
             for(int k=j;k<resultCase.size();k++)
@@ -53,7 +54,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
         else
         {
             ConverterJSON conv = ConverterJSON();
-            conv.SetPath(_index.path);
+            conv.SetPath(_index->path);
             int c = conv.GetResponsesLimit();
             c = (resultCase.size()>c)? c:resultCase.size();
             for(int k=0;k<c;k++){
@@ -68,8 +69,8 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
 
     for(int i=0;i< queries_input.size();i++){
-        std::vector<RelativeIndex> resultCase = addWords(_index.split(queries_input[i], " "),_index);
-        result[i] = countWords(resultCase,_index);
+        std::vector<RelativeIndex> resultCase = addWords(_index.split(queries_input[i], " "),&_index);
+        result[i] = countWords(&resultCase,&_index);
     }
     return result;
 };

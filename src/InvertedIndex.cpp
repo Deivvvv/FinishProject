@@ -1,5 +1,7 @@
 #include "InvertedIndex.h"
 
+#include <mutex>
+std::mutex _look;
 void InvertedIndex::SetPath(const std::string &_path)
 {
     path = _path;
@@ -41,21 +43,27 @@ void InvertedIndex::UpdateDocumentBaseThread(int a, const std::string &str)
                 if(search->second[k].doc_id == a)
                 {
                     add =true;
+                    _look.lock();
                     search->second[k].count++;
+                    _look.unlock();
                 }
             }
             if(!add)
             {
                 Entry wordCase = Entry();
                 wordCase.doc_id = a;
+                _look.lock();
                 search->second.push_back(wordCase);
+                _look.unlock();
             }
         }
         else
         {
             Entry wordCase = Entry();
             wordCase.doc_id = a;
+            _look.lock();
             freq_dictionary[textList[j]].push_back(wordCase);
+            _look.unlock();
         }
     }
 }
@@ -97,10 +105,6 @@ std::vector<Entry> InvertedIndex::GetWordCount(const std::string &word) const
 {
     auto search = freq_dictionary.find(word);
     if(search != freq_dictionary.end()){
-for(int i=0;i< search->second.size();i++){
-    std::cout<< word << ":"<< search->second[i].doc_id << ":"<< search->second[i].count << std::endl;
-}
-        std::cout << std::endl;
         return search->second;
     }
     return std::vector<Entry>();

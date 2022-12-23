@@ -11,7 +11,6 @@ std::string FindPath(std::string word){
     for( int i=0;i<a;i++)
         str +=word[i];
 
-    std::cout << str << std::endl;
 
     return str;
 }

@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <cstdio>
 
 using json = nlohmann::json;
 

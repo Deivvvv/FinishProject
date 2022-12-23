@@ -6,7 +6,6 @@
 #include <string>
 #include <thread>
 
-
 struct Entry
 {
     size_t doc_id, count =1;
