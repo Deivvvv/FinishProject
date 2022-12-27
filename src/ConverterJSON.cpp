@@ -9,7 +9,6 @@ void  ScanFile(std::ifstream *file, std::string filePath){
 
     if(!file->good()){
         std::cout <<"File " + filePath+" no accses read" << std::endl;
-      //std::exit(0);
     }
 }
 void  ScanSaveFile( std::string filePath){
@@ -17,7 +16,6 @@ void  ScanSaveFile( std::string filePath){
     std::ifstream file(filePath);
     if(!file.is_open()){
         std::cout <<"File " + filePath+" saving error" << std::endl;
-        //std::exit(0);
     }
     else
         std::cout <<"File " + filePath+" successfully saved" << std::endl;
@@ -124,7 +122,6 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> a
         }
     }
 
-   // std::cout << j.dump(4) << std::endl;
 
     file << std::setw(4) << j<< std::endl;
     file.close();

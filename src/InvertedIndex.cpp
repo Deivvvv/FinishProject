@@ -89,9 +89,7 @@ void InvertedIndex::UpdateDocumentBase(const std::vector<std::string> &input_doc
     for(int i = 0; i < new_docs.size(); i++)
     {
         int a = docs.size();
-        std::thread call(&InvertedIndex::UpdateDocumentBaseThread, this,a ,new_docs[i]);
-        threadList.push_back(std::move(call));
-
+        threadList.emplace_back(&InvertedIndex::UpdateDocumentBaseThread, this,a ,new_docs[i]);
         docs.push_back(new_docs[i]);
     }
 
